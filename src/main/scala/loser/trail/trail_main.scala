@@ -49,7 +49,6 @@ object trail_main {
     records("invpm30")=invpm30.getflow
     records("invpm31")=invpm31.getflow
     records("invpm33")=invpm33.getflow
-    
      
     
     while(true){

@@ -30,7 +30,7 @@ class MbscConnInfoSpark(var urx:String,var objname:String="",var Attr:String="",
           }
           //add from Infosphere
           try{
-            tempvariable+=mbsc.getAttribute(SparkObject,Attr).asInstanceOf[Long]
+            tempvariable+=mbsc.getAttribute(InfoObject,Attr).asInstanceOf[Long]
            }catch{
             case _ => Unit
           }
