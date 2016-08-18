@@ -31,15 +31,15 @@ object trail_main {
 		
 		var tableName = TableName.valueOf("Rec4Speed");
 		var table = con.getTable(tableName); 
-
+		var target_topic=args(0);
 
 		
-    val invpm27=new MbscConnInfoSpark("service:jmx:rmi:///jndi/rmi://invpm27:9999/jmxrmi","kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec","Count","16party,7party1")
-    val invpm28=new MbscConnInfoSpark("service:jmx:rmi:///jndi/rmi://invpm28:9999/jmxrmi","kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec","Count","16party,7party1")
-    val invpm29=new MbscConnInfoSpark("service:jmx:rmi:///jndi/rmi://invpm29:9999/jmxrmi","kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec","Count","16party,7party1")
-    val invpm30=new MbscConnInfoSpark("service:jmx:rmi:///jndi/rmi://invpm30:9999/jmxrmi","kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec","Count","16party,7party1")
-    val invpm31=new MbscConnInfoSpark("service:jmx:rmi:///jndi/rmi://invpm31:9999/jmxrmi","kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec","Count","16party,7party1")
-    val invpm33=new MbscConnInfoSpark("service:jmx:rmi:///jndi/rmi://invpm33:9999/jmxrmi","kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec","Count","16party,7party1")
+    val invpm27=new MbscConnInfoSpark("service:jmx:rmi:///jndi/rmi://invpm27:9999/jmxrmi","kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec","Count",target_topic)
+    val invpm28=new MbscConnInfoSpark("service:jmx:rmi:///jndi/rmi://invpm28:9999/jmxrmi","kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec","Count",target_topic)
+    val invpm29=new MbscConnInfoSpark("service:jmx:rmi:///jndi/rmi://invpm29:9999/jmxrmi","kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec","Count",target_topic)
+    val invpm30=new MbscConnInfoSpark("service:jmx:rmi:///jndi/rmi://invpm30:9999/jmxrmi","kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec","Count",target_topic)
+    val invpm31=new MbscConnInfoSpark("service:jmx:rmi:///jndi/rmi://invpm31:9999/jmxrmi","kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec","Count",target_topic)
+    val invpm33=new MbscConnInfoSpark("service:jmx:rmi:///jndi/rmi://invpm33:9999/jmxrmi","kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec","Count",target_topic)
     
     
     var records = new mutable.HashMap[String, Long]()
