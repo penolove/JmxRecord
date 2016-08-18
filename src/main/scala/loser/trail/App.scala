@@ -23,10 +23,9 @@ object App {
   }
 
   def validatePatser(option:OptionSet ):Unit={
-    val exitStatus = 0;
     if(option.has("help")) {
       getParser().printHelpOn(System.out);
-      System.exit(1)
+      System.exit(0)
     }
   }
   
@@ -34,11 +33,10 @@ object App {
     //val qq=list.toArray(args.toList.asJava)
     val parser = getParser();
     val options = parser.parse(args : _*)
-    
-    if(options.has("help")) {
-      parser.printHelpOn(System.out)
-      System.exit(0)
-    }
+    validatePatser(options)
+
+    var x11= options.valueOf("123").asInstanceOf[Int];
+    println(x11)
     		//validatePatser(options);
     //validatePatser
     
