@@ -69,10 +69,10 @@ object trail_main {
       val p = new Put(Bytes.toBytes("Rowkey"))
       p.addColumn(Bytes.toBytes("all"),Bytes.toBytes("timeend"),Bytes.toBytes(((temp.sum)/2000.0).toString()))
 		  table.put(p)
-		  println(temp.sum)
+		  println("Flows get :"+temp.sum.toString())
       temp.clear
       val sleep = max(0, 2000 - (System.currentTimeMillis - start))
-      println(sleep)
+      //println(sleep)
       Thread.sleep(sleep)
     }
     
