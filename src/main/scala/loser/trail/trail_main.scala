@@ -59,7 +59,7 @@ object trail_main {
 		var table = con.getTable(tableName); 
 
 		
-    val invpm27=new MbscConnInfoSpark("service:jmx:rmi:///jndi/rmi://invpm27:9999/jmxrmi","kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec","Count",target_topic)
+    //val invpm27=new MbscConnInfoSpark("service:jmx:rmi:///jndi/rmi://invpm27:9999/jmxrmi","kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec","Count",target_topic)
     val invpm28=new MbscConnInfoSpark("service:jmx:rmi:///jndi/rmi://invpm28:9999/jmxrmi","kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec","Count",target_topic)
     val invpm29=new MbscConnInfoSpark("service:jmx:rmi:///jndi/rmi://invpm29:9999/jmxrmi","kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec","Count",target_topic)
     val invpm30=new MbscConnInfoSpark("service:jmx:rmi:///jndi/rmi://invpm30:9999/jmxrmi","kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec","Count",target_topic)
@@ -68,7 +68,7 @@ object trail_main {
     
     
     var records = new mutable.HashMap[String, Long]()
-    records("invpm27")=invpm27.getflow
+   // records("invpm27")=invpm27.getflow
     records("invpm28")=invpm28.getflow
     records("invpm29")=invpm29.getflow
     records("invpm30")=invpm30.getflow
@@ -79,8 +79,8 @@ object trail_main {
     while(true){
       val start = System.currentTimeMillis
       var temp= new mutable.ArrayBuffer[Long]
-      temp+=(invpm27.getflow-records("invpm27"))
-      records("invpm27")=invpm27.getflow
+      //temp+=(invpm27.getflow-records("invpm27"))
+      //records("invpm27")=invpm27.getflow
       temp+=(invpm28.getflow-records("invpm28"))
       records("invpm28")=invpm28.getflow
       temp+=(invpm29.getflow-records("invpm29"))

@@ -1,2 +1,2 @@
 # JmxRecord
-./target/DemoItWorks --target_topic 7party1,16party
+./target/DemoItWorks --target_topic 16party_Info,16party
