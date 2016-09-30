@@ -60,7 +60,7 @@ object trail_main {
 
 		
     //val invpm27=new MbscConnInfoSpark("service:jmx:rmi:///jndi/rmi://invpm27:9999/jmxrmi","kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec","Count",target_topic)
-    val invpm28=new MbscConnInfoSpark("service:jmx:rmi:///jndi/rmi://invpm28:9999/jmxrmi","kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec","Count",target_topic)
+    //val invpm28=new MbscConnInfoSpark("service:jmx:rmi:///jndi/rmi://invpm28:9999/jmxrmi","kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec","Count",target_topic)
     val invpm29=new MbscConnInfoSpark("service:jmx:rmi:///jndi/rmi://invpm29:9999/jmxrmi","kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec","Count",target_topic)
     val invpm30=new MbscConnInfoSpark("service:jmx:rmi:///jndi/rmi://invpm30:9999/jmxrmi","kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec","Count",target_topic)
     val invpm31=new MbscConnInfoSpark("service:jmx:rmi:///jndi/rmi://invpm31:9999/jmxrmi","kafka.server:type=BrokerTopicMetrics,name=MessagesInPerSec","Count",target_topic)
@@ -69,7 +69,7 @@ object trail_main {
     
     var records = new mutable.HashMap[String, Long]()
    // records("invpm27")=invpm27.getflow
-    records("invpm28")=invpm28.getflow
+    //records("invpm28")=invpm28.getflow
     records("invpm29")=invpm29.getflow
     records("invpm30")=invpm30.getflow
     records("invpm31")=invpm31.getflow
@@ -81,8 +81,8 @@ object trail_main {
       var temp= new mutable.ArrayBuffer[Long]
       //temp+=(invpm27.getflow-records("invpm27"))
       //records("invpm27")=invpm27.getflow
-      temp+=(invpm28.getflow-records("invpm28"))
-      records("invpm28")=invpm28.getflow
+      //temp+=(invpm28.getflow-records("invpm28"))
+      //records("invpm28")=invpm28.getflow
       temp+=(invpm29.getflow-records("invpm29"))
       records("invpm29")=invpm29.getflow
       temp+=(invpm30.getflow-records("invpm30"))
